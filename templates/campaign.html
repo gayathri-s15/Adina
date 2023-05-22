@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/bootstrap.min.css')}}">
+    <link href="{{ url_for('static',filename='assets/css/font_style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/fontawesome-all.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/c3.css')}}">
+    <title>Camapign Performance</title>
+</head>
+
+<body>
+    <h2 style="padding-top: 10px; position: fixed;">   ADINA By Amethyst</h2>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+         <!-- ============================================================== -->
+        <!-- navbar -->
+       
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+         <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href=index  aria-expanded="false" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=influencer  aria-expanded="false" ><i class="fa fa-fw fa-rocket"></i>Influencer</a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=campaign  aria-expanded="false" ><i class="fas fa-fw fa-chart-pie"></i>Campaign Performance</a>
+                                
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href=word  aria-expanded="false" ><i class="fab fa-fw fa-wpforms"></i>Sentiment Analysis</a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=demo  aria-expanded="false" ><i class="fas fa-fw fa-table"></i>Demographic Analysis</a>
+                                
+                            </li>
+                            <li class="nav-divider">
+                                Features
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=invoice  aria-expanded="false" ><i class="fas fa-fw fa-file"></i> Invoice </a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=email  aria-expanded="false" ><i class="fas fa-fw fa-inbox"></i> InMail <span class="badge badge-secondary">New</span></a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=about  aria-expanded="false" ><i class="fas fa-fw fa-columns"></i>About</a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=contact  aria-expanded="false" ><i class="fas fa-f fa-folder"></i>Contact Us</a>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+	    <!-- ============================================================== -->
+	    
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">
+                <!-- ============================================================== -->
+                <!-- pageheader -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Campaign Performance </h2>
+                            <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Charts</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">C3 Charts</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end pageheader -->
+                <!-- ============================================================== -->
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="card" style="width:1175px;">
+                        <h5 class="card-header">Campaign Overview</h5>
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">S.No</th>
+                                        <th scope="col">Campaign Name</th>
+                                        <th scope="col">Cost</th>
+                                        <th scope="col">Installs</th>
+                                        <th scope="col">CPI</th>
+                                        <th scope="col">Total Revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>IMT-Instagram-Android-US</td>
+                                        <td>$83489.0</td>
+                                        <td>50,858.0</td>
+                                        <td>0.756597</td>
+                                        <td>$98,7646.0</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>IMT-Instagram-IOS-CN</td>
+                                        <td>$38209.0</td>
+                                        <td>41,000.0</td>
+                                        <td>0.931927</td>
+                                        <td>$88,646.0</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>IMT-FB-Android-RoW2-AE-Playables-FANRW</td>
+                                        <td>$34,746</td>
+                                        <td>55,891</td>
+                                        <td>0.10565</td>
+                                        <td>$29,437</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>IMT-FB-Android-DE-AI-Videos</td>
+                                        <td>$3,076 </td>
+                                        <td>41,000.0</td>
+                                        <td>0.931927</td>
+                                        <td>$89,670.0</td>    
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>IMT-Instagram-Android-CA</td>
+                                        <td>$7,539 </td>
+                                        <td>41,000.0</td>
+                                        <td>0.931927</td>
+                                        <td>$88,646.0</td>    
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="row">
+                    <!-- ============================================================== -->
+                    <!--  area chart  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Facebook Vs Instagram</h5>
+                            <div class="card-body">
+                                <div id="c3chart_area"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card" >
+                            <h5 class="card-header">Facebook Vs Instagram Performance </h5>
+                        
+                            <div class="card-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">This Week</th>
+                                            
+        
+                                        </tr>
+                                    </thead>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">S.No</th>
+                                            <th scope="col">Media Source</th>
+                                            <th scope="col">SoldOut Avg</th>
+                                            <th scope="col">Percent</th>
+        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Facebook</td>
+                                            <td>77</td>
+                                            <td>86.52</td>
+                                               
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Instagram</td>
+                                            <td>12</td>
+                                            <td>13.48</td>
+                                               
+                                        </tr>
+                                        
+                                        
+
+                                    </tbody>
+                                </table>
+                                <br>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Past Week</th>
+                                            
+        
+                                        </tr>
+                                    </thead>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">S.No</th>
+                                            <th scope="col">Media Source</th>
+                                            <th scope="col">SoldOut Avg</th>
+                                            <th scope="col">Percent</th>
+        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Socials</td>
+                                            <td>77</td>
+                                            <td>86.52</td>
+                                               
+                                        </tr>
+                                        
+                                        
+
+                                    </tbody>
+                                </table>
+ </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ============================================================== -->
+                    <!--  end area chart  -->
+                    <!-- ============================================================== -->
+
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Growth of Facebook campaign</h5>
+                            <div class="card-body">
+                                <div id="c3chart_zoom"></div>
+                            </div>
+                        </div>
+                    </div>
+                     
+                    <!-- ---------------------------------------------------------- -->
+                    <!-- ZOOMCHART -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card" >
+                            <h5 class="card-header">Campaign Growth Via Facebook </h5>
+                        
+                            <div class="card-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">This Week</th>
+                                            
+        
+                                        </tr>
+                                    </thead>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">S.No</th>
+                                            <th scope="col">Media Source</th>
+                                            <th scope="col">Cost</th>
+                                            <th scope="col">Total Revenue</th>
+        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Facebook</td>
+                                            <td>99061.0</td>
+                                            <td>$74185.0</td>
+                                               
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Facebook</td>
+                                            <td>34746.0</td>
+                                            <td>$26216.0</td>
+                                               
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Facebook</td>
+                                            <td>31662.0</td>
+                                            <td>$55175.0</td>
+                                               
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                            <td>Facebook</td>
+                                            <td>22042.0	</td>
+                                            <td>$29437.0</td>
+                                               
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5</th>
+                                            <td>Facebook</td>
+                                            <td>20704.0</td>
+                                            <td>$2626.0</td>
+                                               
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                               
+ </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Growth of Instagram campaign</h5>
+                            <div class="card-body">
+                                <div id="c3chart_zoom_instagram"></div>
+                            </div>
+                        </div>
+                    </div>
+                     
+
+
+                    
+               
+                    <!-- ---------------------------------------------------------- -->
+                    <!-- ZOOMCHART -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card" >
+                            <h5 class="card-header">Campaign Growth Via Instagram </h5>
+                        
+                            <div class="card-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">This Week</th>
+                                            
+        
+                                        </tr>
+                                    </thead>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">S.No</th>
+                                            <th scope="col">Media Source</th>
+                                            <th scope="col">Cost</th>
+                                            <th scope="col">Total Revenue</th>
+        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Instagram</td>
+                                            <td>38479.0</td>
+                                            <td>$50858.0</td>
+                                               
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Instagram</td>
+                                            <td>38209.0</td>
+                                            <td>$41000.0</td>
+                                               
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Instagram</td>
+                                            <td>14645.0</td>
+                                            <td>$16358.0</td>
+                                               
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                            <td>Instagram</td>
+                                            <td>13959.0</td>
+                                            <td>$17876.0</td>
+                                               
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5</th>
+                                            <td>Instagram</td>
+                                            <td>13819.0</td>
+                                            <td>$2626.0</td>
+                                               
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                               
+ </table>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <!-- ============================================================== -->
+                    <!--  end stacked chart  -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!--  combination chart  -->
+                    <!-- ============================================================== -->
+               
+                    <!-- ============================================================== -->
+                    <!-- end pie chart  -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- dount chart  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="card" >
+                            <h5 class="card-header">Donut Chart </h5>
+                            <div class="card-body">
+                                <div id="c3chart_donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card" >
+                            <h5 class="card-header">Facebook Vs Instagram ROI Performance </h5>
+                        
+                            <div class="card-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">FaceBook</th>
+                                            
+        
+                                        </tr>
+                                    </thead>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">S.No</th>
+                                            <th scope="col">Media Source</th>
+                                            <th scope="col">Sales</th>
+                                            <th scope="col">ROI</th>
+        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Facebook</td>
+                                            <td>388227.0</td>
+                                            <td>86.52</td>
+                                               
+                                        </tr>
+                                    
+                                        
+                                        
+
+                                    </tbody>
+                                </table>
+                                <br>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Instagram</th>
+                                            
+        
+                                        </tr>
+                                    </thead>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">S.No</th>
+                                            <th scope="col">Media Source</th>
+                                            <th scope="col">Sales</th>
+                                            <th scope="col">ROI</th>
+        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Instagram</td>
+                                            <td>177980.0</td>
+                                            <td>13.8%</td>
+                                               
+                                        </tr>
+                                        
+                                        
+
+                                    </tbody>
+                                </table>
+ </table>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <!-- ============================================================== -->
+                    <!-- end dount chart  -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- dount gauge  -->
+                    <!-- ============================================================== -->
+                   
+                    <!-- ============================================================== -->
+                    <!-- end dount gauge  -->
+                    <!-- ============================================================== -->
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="javascript: void(0);">About</a>
+                                <a href="javascript: void(0);">Support</a>
+                                <a href="javascript: void(0);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="{{ url_for('static',filename='assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/bootstrap.bundle.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/jquery.slimscroll.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/main-js.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/c3.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/d3-5.4.0.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/C3chartjs.js')}}"></script>
+</body>
+ 
+</html>

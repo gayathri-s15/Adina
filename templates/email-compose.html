@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-3LV0iHPg07+tMX+FZzSfJ3mNxlAzzC/Yw1ETWhYgwMqzAk9sI6HN4QW+2ZmnuI9EBq3DSYeVn8tWbXqYl5b6Fw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="{{ url_for('static',filename='assets/css/font_style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/fontawesome-all.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/select2.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/summernote-bs4.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/materialdesignicons.min.css')}}">
+    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+</head>
+
+<body>
+    <h2 style="padding-top: 10px; position: fixed;">   ADINA By Amethyst</h2>
+    <div class="dashboard-main-wrapper">
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href=index  aria-expanded="false" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=influencer  aria-expanded="false" ><i class="fa fa-fw fa-rocket"></i>Influencer</a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=campaign  aria-expanded="false" ><i class="fas fa-fw fa-chart-pie"></i>Campaign Performance</a>
+                                
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href=word  aria-expanded="false" ><i class="fab fa-fw fa-wpforms"></i>Sentiment Analysis</a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=demo  aria-expanded="false" ><i class="fas fa-fw fa-table"></i>Demographic Analysis</a>
+                                
+                            </li>
+                            <li class="nav-divider">
+                                Features
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=invoice  aria-expanded="false" ><i class="fas fa-fw fa-file"></i> Invoice </a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=email  aria-expanded="false" ><i class="fas fa-fw fa-inbox"></i> InMail <span class="badge badge-secondary">New</span></a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=about  aria-expanded="false" ><i class="fas fa-fw fa-columns"></i>About</a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=contact  aria-expanded="false" ><i class="fas fa-f fa-folder"></i>Contact Us</a>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="dashboard-wrapper">
+            <div class="container-fluid">
+                <aside class="page-aside">
+                    <div class="aside-content">
+                        <div class="aside-header">
+                            <button class="navbar-toggle" data-target=".aside-nav" data-toggle="collapse" type="button"><span class="icon"><i class="fas fa-caret-down"></i></span></button><span class="title">Mail Service</span>
+                            <p class="description">Service description</p>
+                        </div>
+                        <div class="aside-compose"><a class="btn btn-lg btn-secondary btn-block" href=compose>Compose Email</a></div>
+                        <div class="aside-nav collapse">
+                            <ul class="nav">
+                                <li><a href="#"><span class="icon"><i class="fas fa-fw fa-inbox"></i></span>Inbox<span class="badge badge-primary float-right">8</span></a></li>
+                                <li class="active"><a href="#"><span class="icon"><i class="fas fa-fw  fa-envelope"></i></span>Sent Mail</a></li>
+                                <li><a href="#"><span class="icon"><i class="fas fa-fw fa-briefcase"></i></span>Important<span class="badge badge-secondary float-right">4</span></a></li>
+                                <li><a href="#"><span class="icon"><i class="fas fa-fw fa-file"></i></span>Drafts</a></li>
+                                <li><a href="#"><span class="icon"><i class="fas fa-fw fa-star"></i></span>Tags</a></li>
+                                <li><a href="#"><span class="icon"><i class="fas fa-fw fa-trash"></i></span>Trash</a></li>
+                            </ul><span class="title">Labels</span>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#"><i class="m-r-10 mdi mdi-label text-secondary"></i>
+                                    Important </a></li>
+                                <li><a href="#">
+                                   <i class="m-r-10 mdi mdi-label text-primary"></i> Business   </a></li>
+                                <li><a href="#"> <i class="m-r-10 mdi mdi-label text-brand"></i>
+                                   Inspiration </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+                <div class="main-content container-fluid p-0">
+                    <div class="email-head">
+                        <div class="email-head-title">Compose new message<span class="icon mdi mdi-edit"></span></div>
+                    </div>
+                    <form action="/send" method="post">
+                    <div class="email-compose-fields">
+                        <div class="to">
+                            <div class="form-group row pt-0">
+                                <label class="col-md-1 control-label">To:</label>
+                                <div class="col-md-11">
+                                    <input type="email" id="email" name="email" required>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="to cc">
+                            <div class="form-group row pt-2">
+                                <label class="col-md-1 control-label">Cc</label>
+                                <div class="col-md-11">
+                                    <select class="js-example-basic-multiple" multiple="multiple" name="cc">
+                                        <option value="gayathriaids@smvec.ac.in">gayathriaids@smvec.ac.in</option>
+                                        <option value="nivethaaids@smvec.ac.in" selected="selected">nivethaaids@smvec.ac.in</option>
+                                        <option value="archanaaids@smvec.ac.in"selected="selected">archanaaids@smvec.ac.in</option>
+                                        <option value="dharnikaaids@smvec.ac.in">dharnikaaids@smvec.ac.in</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subject">
+                            <div class="form-group row pt-2">
+                                <label class="col-md-1 control-label">Subject</label>
+                                <div class="col-md-11">
+                                    <input class="form-control" type="text" name="subject">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subject">
+                            <div class="form-group row pt-2">
+                                <label class="col-md-1 control-label">Message</label>
+                                <div class="col-md-11">
+                                    <input style="margin-top:20px;" class="form-control" type="text"  placeholder="Enter the message" name="message" id="message">
+                                </div>
+                                <h3 style="margin: 5% 10%;color:green" >{{text}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="email editor">
+                        <div class="email action-send">
+                            <div class="col-md-12 ">
+                                <div class="form-group">
+                                    <button class="btn btn-primary btn-space" type="submit"></a href= send > Send</a></button>
+                                    <button class="btn btn-secondary btn-space"></a href= "/cancel" > Cancel</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static',filename='assets/js/jquery-3.3.1.min.js')}}"></script>
+  
+    <script src="{{ url_for('static',filename='assets/js/bootstrap.bundle.js')}}"></script>
+  
+    <script src="{{ url_for('static',filename='assets/js/jquery.slimscroll.js')}}"></script>
+    
+    <script src="{{ url_for('static',filename='assets/js/main-js.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/select2.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/summernote-bs4.js')}}"></script>
+    <script>
+    $(document).ready(function() {
+        $('.js-example-basic-multiple').select2({ tags: true });
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            height: 300
+
+        });
+    });
+    </script>
+</body>
+ 
+</html>

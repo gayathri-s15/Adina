@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+
+ 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/bootstrap.min.css')}}">
+    <link href="{{ url_for('static',filename='assets/css/font_style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/fontawesome-all.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/c3.css')}}">
+    <title>Camapign Performance</title>
+</head>
+
+<body>
+    <h2 style="padding-top: 10px; position: fixed;">   ADINA By Amethyst</h2>
+    <div class="dashboard-main-wrapper">
+    
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="index.html"  aria-expanded="false" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=influencer  aria-expanded="false" ><i class="fa fa-fw fa-rocket"></i>Influencer</a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=campaign  aria-expanded="false" ><i class="fas fa-fw fa-chart-pie"></i>Campaign Performance</a>
+                                
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href=word  aria-expanded="false" ><i class="fab fa-fw fa-wpforms"></i>Sentiment Analysis</a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=demo  aria-expanded="false" ><i class="fas fa-fw fa-table"></i>Demographic Analysis</a>
+                                
+                            </li>
+                            <li class="nav-divider">
+                                Features
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=invoice  aria-expanded="false" ><i class="fas fa-fw fa-file"></i> Invoice </a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=email  aria-expanded="false" ><i class="fas fa-fw fa-inbox"></i> InMail <span class="badge badge-secondary">New</span></a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=about  aria-expanded="false" ><i class="fas fa-fw fa-columns"></i>About</a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=contact  aria-expanded="false" ><i class="fas fa-f fa-folder"></i>Contact Us</a>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+	   
+        <div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">
+                
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Sentiment Analysis </h2>
+                            <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Charts</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">C3 Charts</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+<style>
+    #chartdiv {
+      width: 1000px;
+      height: 700px;
+    }
+    </style>
+    
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/wc.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    
+    
+
+    <script>
+    am5.ready(function() {
+  
+    var root = am5.Root.new("chartdiv");
+   
+    root.setThemes([
+      am5themes_Animated.new(root)
+    ]);
+    
+
+    var corpus = "{{ corpus }}";
+    var series = root.container.children.push(am5wc.WordCloud.new(root, {
+      maxCount:100,
+      minWordLength:2,
+      maxFontSize:am5.percent(40),
+      text:corpus,
+    }));
+    
+    
+    series.labels.template.setAll({
+      paddingTop: 5,
+      paddingBottom: 5,
+      paddingLeft: 5,
+      paddingRight: 5,
+      fontFamily: "Courier New"
+    });
+    
+    }); 
+    </script>
+    
+    <h3>Word Cloud</h3>
+    <div id="chartdiv"></div>
+
+<br>
+
+    <h3>Review Classification</h3>
+    <div class="row">
+       
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="card">
+                <h5 class="card-header">Positive Vs Negative </h5>
+                <div class="card-body">
+                    <div id="c3chart_pie"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="card" >
+                <h5 class="card-header">Positive Vs Negative Reviews </h5>
+            
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">This Week</th>
+                                
+
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th scope="col">S.No</th>
+                                <th scope="col">Media Source</th>
+                                <th scope="col">Classification</th>
+                                <th scope="col">Percent</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Facebook</td>
+                                <td>Positive</td>
+                                <td>70.56%</td>
+                                   
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Instagram</td>
+                                <td>Negative</td>
+                                <td>29.64%</td>
+                                   
+                            </tr>
+                            
+                            
+
+                        </tbody>
+                    </table>
+                    <br>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Past Week</th>
+                                
+
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th scope="col">S.No</th>
+                                <th scope="col">Media Source</th>
+                                <th scope="col">Classification</th>
+                                <th scope="col">Percent</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Socials</td>
+                                <td>Mostly Positive</td>
+                                <td>86.52</td>
+                                   
+                            </tr>
+                        </tbody>
+                    </table>
+</table>
+                </div>
+            </div>
+        </div>
+    <script src="{{ url_for('static',filename='assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/bootstrap.bundle.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/jquery.slimscroll.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/c3.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/d3-5.4.0.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/C3chartjs.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/main-js.js')}}"></script>
+</body>
+ 
+</html>
